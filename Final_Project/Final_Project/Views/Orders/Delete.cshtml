@@ -1,0 +1,34 @@
+﻿@model Order
+<h1 style="text-align:center" class="alert alert-danger">Are you sure you want to delete this?</h1>
+<dl class="row">
+    <dt class="col-2">@Html.DisplayNameFor(e=>e.Id)</dt>
+    <dd class="col-10">@Html.DisplayFor(e=>e.Id)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(e=>e.CustomerId)</dt>
+    <dd class="col-10">@Html.DisplayFor(e=>e.Customer.Name)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(e=>e.ProductId)</dt>
+    <dd class="col-10">@Html.DisplayFor(e=>e.Product.Name)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(e=>e.Quantity)</dt>
+    <dd class="col-10">@Html.DisplayFor(e=>e.Quantity)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(e=>e.OrderDate)</dt>
+    <dd class="col-10">@Html.DisplayFor(e=>e.OrderDate)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(e=>e.ShippedDate)</dt>
+    <dd class="col-10">@Html.DisplayFor(e=>e.ShippedDate)</dd>
+
+ 
+</dl>
+<form method="post" asp-controller="Orders" asp-action="DeleteCurrent">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <div class="row" style="width:200px;padding-left:13px">
+        <a class="nav-link text-white btn btn-primary mt-1" asp-controller="Orders" asp-action="GetIndexView">Back to list</a>
+
+    </div>
+
+
+</form>
+

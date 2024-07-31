@@ -1,0 +1,8 @@
+.h1Customer {
+	text-align: center;
+	color: white;
+	border: 1px solid #5b4f7e;
+	background-color:#5b4f7e;
+	border-radius: 5px;
+	padding:10px;
+}

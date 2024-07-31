@@ -1,0 +1,32 @@
+﻿@model Order
+<h1 class="alert" style="text-align:center">Order @Model.Id Details</h1>
+<div class="row">
+    <dl class="row col-6">
+        <dt class="col-2">@Html.DisplayNameFor(e=>e.Id)</dt>
+        <dd class="col-10">@Html.DisplayFor(e=>e.Id)</dd>
+
+        <dt class="col-2">@Html.DisplayNameFor(e=>e.CustomerId)</dt>
+        <dd class="col-10">@Html.DisplayFor(e=>e.Customer.Name)</dd>
+@*        <dd class="col-10">@Model.Customer.Name</dd>
+*@
+
+        <dt class="col-2">@Html.DisplayNameFor(e=>e.ProductId)</dt>
+        <dd class="col-10">@Html.DisplayFor(e=>e.Product.Name)</dd>
+
+        <dt class="col-2">@Html.DisplayNameFor(e=>e.Quantity)</dt>
+        <dd class="col-10">@Html.DisplayFor(e=>e.Quantity)</dd>
+
+        <dt class="col-2">@Html.DisplayNameFor(e=>e.OrderDate)</dt>
+        <dd class="col-10">@Html.DisplayFor(e=>e.OrderDate)</dd>
+
+        <dt class="col-2">@Html.DisplayNameFor(e=>e.ShippedDate)</dt>
+        <dd class="col-10">@Html.DisplayFor(e=>e.ShippedDate)</dd>
+
+    </dl>
+
+</div>
+
+<div class="row" style="width:200px;padding-left:13px">
+    <a class="nav-link text-white btn btn-primary mt-1" asp-controller="Orders" asp-action="GetIndexView">Back to list</a>
+
+</div>

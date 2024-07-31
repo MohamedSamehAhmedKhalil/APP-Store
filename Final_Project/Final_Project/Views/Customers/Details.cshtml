@@ -1,0 +1,36 @@
+﻿@model Customer
+<h1 class="alert" style="text-align:center">@Model.Name Details</h1>
+<div class="row">
+    <dl class="row col-6">
+        <dt class="col-2">@Html.DisplayNameFor(e=>e.Id)</dt>
+        <dd class="col-10">@Html.DisplayFor(e=>e.Id)</dd>
+        @*    <dd class="col-10">@Model.Id</dd>*@
+
+        <dt class="col-2">@Html.DisplayNameFor(e=>e.Name)</dt>
+        <dd class="col-10">@Html.DisplayFor(e=>e.Name)</dd>
+        @*    <dd class="col-10">@Model.Name</dd>*@
+
+        <dt class="col-2">@Html.DisplayNameFor(e=>e.Address)</dt>
+        <dd class="col-10">@Html.DisplayFor(e=>e.Address)</dd>
+        @*<dd class="col-10">@Model.Position</dd>*@
+
+        <dt class="col-2">@Html.DisplayNameFor(e=>e.Mobile)</dt>
+        <dd class="col-10">@Html.DisplayFor(e=>e.Mobile)</dd>
+        @*<dd class="col-10">@Model.Salary</dd>*@
+
+        <dt class="col-2">@Html.DisplayNameFor(e=>e.Email)</dt>
+        <dd class="col-10">@Html.DisplayFor(e=>e.Email)</dd>
+        @*<dd class="col-10">@Model.BirthDate</dd>*@
+
+        <dt class="col-2">@Html.DisplayNameFor(e=>e.JoinDate)</dt>
+        <dd class="col-10">@Html.DisplayFor(e=>e.JoinDate)</dd>
+        @*<dd class="col-10">@Model.JoinDate</dd>*@
+
+    </dl>
+
+</div>
+
+<div class="row" style="width:200px;padding-left:13px">
+    <a class="nav-link text-white btn btn-primary mt-1" asp-controller="Customers" asp-action="GetIndexView">Back to list</a>
+
+</div>

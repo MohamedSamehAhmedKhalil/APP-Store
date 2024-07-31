@@ -1,0 +1,55 @@
+﻿@model Product
+<h1 class="alert alert-warning text-center">Edit Product</h1>
+<div class="row">
+    <form class="col-4" method="post" asp-controller="Products" asp-action="EditCurrent" enctype="multipart/form-data">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="ImageUrl" />
+
+        <div>
+            <label asp-for="Name"></label>
+            <input type="text" asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Color"></label>
+            <input type="text" asp-for="Color" class="form-control" />
+            <span asp-validation-for="Color" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Price"></label>
+            <input type="number" asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="ImageUrl"></label>
+            <input type="file" name="imageFormFile" id="imageFormFile" accept=".png,.jpg,.jpeg" onchange="AddImage()" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="JoinDate"></label>
+            <input asp-for="JoinDate" class="form-control" />
+            <span asp-validation-for="JoinDate" class="text-danger"></span>
+        </div>
+
+
+        <div>
+            <button type="submit" class="btn btn-primary mt-1">Edit</button>
+            <a class="nav-link text-white btn btn-primary mt-1" asp-controller="Products" asp-action="GetIndexView">Back to list</a>
+        </div>
+    </form>
+
+    <div class="col-4">
+        <img src="" id="proImage" style="object-fit:contain;width:500px;height:500px" />
+    </div>
+
+</div>
+
+@section Scripts{
+    <script>
+        function AddImage() {
+            document.getElementById('proImage').src = window.URL.createObjectURL(document.getElementById('imageFormFile').files[0]);
+        }
+    </script>
+}

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Product>
+
+<h1 style="text-align:center;color:blueviolet" class="alert alert-info">
+    Product
+</h1>
+<br />
+<hr />
+<br />
+
+<a asp-controller="Products" asp-action="GetCreate" class="btn btn-success mb-1">Add Product</a>
+
+@if (Model.Count() > 0)
+{
+    <table class="table table-bordered table-striped table-hover" style="text-align:center">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(e=>e.Id)</th>
+                <th>@Html.DisplayNameFor(e=>e.Name)</th>
+                <th>@Html.DisplayNameFor(e=>e.Color)</th>
+                <th>@Html.DisplayNameFor(e=>e.Price)</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Color
+                    </td>
+                    <td>
+                        @item.Price
+
+                    </td>
+                    <td>
+                        <a asp-action="GetDetails" asp-controller="Products" asp-route-id="@item.Id" class="btn btn-outline-success" title="Details"><i class="bi bi-list-ul"></i></a>
+                    </td>
+                    <td>
+                        <a asp-action="GetEditView" asp-controller="Products" asp-route-id="@item.Id" class="btn btn-outline-primary" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                    </td>
+                    <td>
+                        <a asp-action="GetDeleteView" asp-controller="Products" asp-route-id="@item.Id" class="btn btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></a>
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h1 class="alert alert-danger">There is no data.</h1>
+}
+<br />
+<hr />
+<br />
+
+
+
+
+
+
+
+
+
+
+<br />
+<br />
+
+
+
+
+
